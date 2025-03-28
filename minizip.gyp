@@ -32,23 +32,23 @@
 					'zlib.gyp:zlib'
 				],
 			}],
-			['os in "osx ios" and use_system_zlib==1', {
+			['OS in "mac ios" and use_system_zlib==1', {
 				'link_settings': {
 					'libraries': [ '$(SDKROOT)/usr/lib/libz.tbd' ],
 					'libraries!': [ '-lz' ],
 				},
 			}],
-			[ 'os=="win"', {
+			[ 'OS=="win"', {
 				'sources': [ 'contrib/minizip/iowin32.c' ]
 			},{
 				'cflags!': [ '-ansi' ],
 			}],
-			[ 'os in "osx ios"', {
+			[ 'OS in "mac ios"', {
 				'xcode_settings': {
 					'GCC_C_LANGUAGE_STANDARD': 'ansi',
 				},
 			}],
-			[ 'os in "android osx ios"', {
+			[ 'OS in "android mac ios"', {
 				'defines': [ 'USE_FILE32API', ],
 			}],
 		]
